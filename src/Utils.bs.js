@@ -7,8 +7,9 @@ var $$String = require("bs-platform/lib/js/string.js");
 var Belt_List = require("bs-platform/lib/js/belt_List.js");
 var Caml_format = require("bs-platform/lib/js/caml_format.js");
 
-function getLines(path) {
-  var __x = $$String.split_on_char(/* "\n" */10, Fs.readFileSync(path, "utf8"));
+function getLines($staropt$star, path) {
+  var splitBy = $staropt$star !== undefined ? $staropt$star : /* "\n" */10;
+  var __x = $$String.split_on_char(splitBy, Fs.readFileSync(path, "utf8"));
   return Belt_List.keep(__x, (function (s) {
                 return s.length !== 0;
               }));

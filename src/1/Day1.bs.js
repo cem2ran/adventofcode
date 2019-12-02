@@ -3,7 +3,7 @@
 
 var Utils = require("../Utils.bs.js");
 
-var input = Utils.getLines("./input.txt");
+var input = Utils.getLines(undefined, "./input.txt");
 
 function fuelPerMass(mass) {
   return (mass / 3 | 0) - 2 | 0;

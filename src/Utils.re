@@ -1,7 +1,7 @@
-let getLines = path =>
+let getLines = (~splitBy='\n', path) =>
   path
   |> Node.Fs.readFileAsUtf8Sync
-  |> String.split_on_char('\n')
+  |> String.split_on_char(splitBy)
   |> Belt.List.keep(_, s => String.length(s) > 0);
 
 let (>>) = (f, g, x) => g(f(x));
